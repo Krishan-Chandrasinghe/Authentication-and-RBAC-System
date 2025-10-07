@@ -11,7 +11,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: `${process.env.FRONTEND_URL}`, credentials: true }));
+app.use(cors({ origin: 'https://rbac-system-mern-front.vercel.app', credentials: true }));
 app.use((req,res,next) => {
   console.log(req.path, req.method);
   next();
