@@ -49,9 +49,10 @@ export const login = async (req, res) => {
 
     res
       .cookie('refreshToken', refreshToken, {
+        path: '/refresh',
         httpOnly: true,
-        secure: false,
-        sameSite: 'strict',
+        secure: true, // when https - true, http - false
+        sameSite: 'none',// strict - use in different domain/subdomain
       })
       .json({ accessToken, role: user.role });
   } catch (err) {
@@ -78,9 +79,10 @@ export const refresh = async (req, res) => {
 
       res
         .cookie('refreshToken', refreshToken, {
+          path: '/refresh',
           httpOnly: true,
-          secure: false,
-          sameSite: 'strict',
+          secure: true, // when https - true, http - false
+          sameSite: 'none',// strict - use in different domain/subdomain
         })
         .json({ accessToken });
     });
@@ -101,7 +103,13 @@ export const logout = async (req, res) => {
     user.refreshToken = null;
     await user.save();
 
-    res.clearCookie('refreshToken', { httpOnly: true, sameSite: 'strict' });
+    res.clearCookie('refreshToken', {
+      path: '/refresh',
+      httpOnly: true,
+      secure: true, 
+      sameSite: 'none',
+    });
+    
     res.json({ message: 'Logged out' });
   } catch (err) {
     res.status(500).json({ message: err.message });
