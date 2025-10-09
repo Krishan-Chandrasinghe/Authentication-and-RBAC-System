@@ -55,7 +55,13 @@ A secure and robust authentication system built with the MERN stack (MongoDB, Ex
     npm install
 ```
 
-#### i. Environment Configuration
+#### i. Edit CORS origin URL inside the server.js
+
+```bash
+baseURL: 'http://localhost:5173',  // Replace with your frontend URL
+```
+
+#### ii. Environment Configuration
 - Create a .env file in the backend directory:
 - **Note :-** You need to put the MONGO_URI as the connection string of **MongoDB atlas** server or **MongoDB Compass** desktop App.
 
@@ -65,7 +71,7 @@ A secure and robust authentication system built with the MERN stack (MongoDB, Ex
     REFRESH_SECRET=refreshsecretdb6af092366c4a1931f0b1d79bc90906
 ```
 
-#### ii. Start Backend Server
+#### iii. Start Backend Server
 
 ```bash
     npm start
@@ -74,7 +80,7 @@ A secure and robust authentication system built with the MERN stack (MongoDB, Ex
 ### 3. Frontend Setup
 
 ```bash
-    cd client
+    cd ../client
     npm install
 ```
 
@@ -83,7 +89,7 @@ A secure and robust authentication system built with the MERN stack (MongoDB, Ex
 - change the baseURL to your client URL
 
 ```bash
-    baseURL: 'http://localhost:5173/api',
+    baseURL: 'http://localhost:5000/api',  // Replace with your backend URL + '/api'
 ```
 
 #### ii. Start Frontend Development Server
