@@ -42,50 +42,53 @@ A secure and robust authentication system built with the MERN stack (MongoDB, Ex
 ## 🚀 Installation & Setup
 
 ### 1. Clone the Repository
+
 ```bash
     git clone https://github.com/Krishan-Chandrasinghe/Authentication-and-RBAC-System.git
     cd Authentication-and-RBAC-System
 ```
 
-#
+### 2. Backend Setup
 
 ```bash
-git clone https://github.com/Krishan-Chandrasinghe/Authentication-and-RBAC-System.git
-cd Authentication-and-RBAC-System
+    cd server
+    npm install
+```
 
-#### Environment Configuration
+#### i. Environment Configuration
 - Create a .env file in the backend directory:
+- **Note :-** You need to put the MONGO_URI as the connection string of **MongoDB atlas** server or ****MongoDB Compass** desktop App.
 
 ```bash
-git clone https://github.com/Krishan-Chandrasinghe/Authentication-and-RBAC-System.git
-cd Authentication-and-RBAC-System
+    MONGO_URI=mongodb://localhost:27017/mern-auth
+    JWT_SECRET=secret069d47bc574638bf2e384b50de160271
+    REFRESH_SECRET=refreshsecretdb6af092366c4a1931f0b1d79bc90906
+```
 
-### 2. Backend Setup
-
-```bash
-git clone https://github.com/Krishan-Chandrasinghe/Authentication-and-RBAC-System.git
-cd Authentication-and-RBAC-System
-
-### 2. Backend Setup
+#### ii. Start Backend Server
 
 ```bash
-git clone https://github.com/Krishan-Chandrasinghe/Authentication-and-RBAC-System.git
-cd Authentication-and-RBAC-System
+    npm start
+```
 
-### 2. Backend Setup
-
-```bash
-git clone https://github.com/Krishan-Chandrasinghe/Authentication-and-RBAC-System.git
-cd Authentication-and-RBAC-System
-
-### 2. Backend Setup
+### 3. Frontend Setup
 
 ```bash
-git clone https://github.com/Krishan-Chandrasinghe/Authentication-and-RBAC-System.git
-cd Authentication-and-RBAC-System
+    cd client
+    npm install
+```
 
-### 2. Backend Setup
+#### i. API Configuration
+- Edit the api.js file (client/src/api.js)
+- change the baseURL to your client URL
 
 ```bash
-git clone https://github.com/Krishan-Chandrasinghe/Authentication-and-RBAC-System.git
-cd Authentication-and-RBAC-System
+    baseURL: 'http://localhost:5173/api',
+```
+
+#### ii. Start Frontend Development Server
+
+```bash
+    npm run dev
+```
+
