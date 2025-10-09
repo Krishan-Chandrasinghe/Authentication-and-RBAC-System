@@ -42,9 +42,10 @@ A secure and robust authentication system built with the MERN stack (MongoDB, Ex
 ## 🚀 Installation & Setup
 
 ### 1. Clone the Repository
-    ```bash
+```bash
     git clone https://github.com/Krishan-Chandrasinghe/Authentication-and-RBAC-System.git
     cd Authentication-and-RBAC-System
+```
 
 #
 
