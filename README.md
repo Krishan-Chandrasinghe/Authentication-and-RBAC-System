@@ -36,7 +36,7 @@ A secure and robust authentication system built with the MERN stack (MongoDB, Ex
 ## 📦 Prerequisites
 
 - Node.js (v14 or higher)
-- MongoDB (v4.4 or higher)
+- MongoDB Compass desktop app or MongoDB Atlas cluster
 - npm or yarn
 
 ## 🚀 Installation & Setup
@@ -57,7 +57,7 @@ A secure and robust authentication system built with the MERN stack (MongoDB, Ex
 
 #### i. Environment Configuration
 - Create a .env file in the backend directory:
-- **Note :-** You need to put the MONGO_URI as the connection string of **MongoDB atlas** server or ****MongoDB Compass** desktop App.
+- **Note :-** You need to put the MONGO_URI as the connection string of **MongoDB atlas** server or **MongoDB Compass** desktop App.
 
 ```bash
     MONGO_URI=mongodb://localhost:27017/mern-auth
@@ -91,4 +91,3 @@ A secure and robust authentication system built with the MERN stack (MongoDB, Ex
 ```bash
     npm run dev
 ```
-
