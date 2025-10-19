@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://rbac-system-backend.vercel.app/api',
+  baseURL: import.meta.env.VITE_BACKEND_URL,
   withCredentials: true, // enables cookie sending
 });
 
