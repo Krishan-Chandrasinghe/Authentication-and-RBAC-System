@@ -51,7 +51,7 @@ cd Authentication-and-RBAC-System
 ### 2. Backend Setup
 
 ```bash
-cd server
+cd .\server\
 npm install
 ```
 
@@ -63,16 +63,11 @@ cp .env.sample .env
 ```
 - **Note :-** You need to update environment variables' data according to your details.
 
-#### ii. Start Backend Server
-
-```bash
-npm run dev
-```
 
 ### 3. Frontend Setup
 
 ```bash
-cd ../client
+cd ..\client\
 npm install
 ```
 #### i. Environment Configuration
@@ -83,8 +78,19 @@ cp .env.sample .env
 ```
 - **Note :-** You need to update environment variables' data according to your details.
 
-#### ii. Start Frontend Development Server
+### 4. Start the application
+- Open two terminals inside your application root folder (One for the Server and one for the Client)
+
+#### i. Start Server(Backend) Server
 
 ```bash
+cd .\client\
+npm run dev
+```
+
+#### ii. Start Client(Frontend) Development Server
+
+```bash
+cd .\server\
 npm run dev
 ```
