@@ -39,7 +39,7 @@ A secure and robust authentication system built with the MERN stack (MongoDB, Ex
 - MongoDB Compass desktop app or MongoDB Atlas cluster
 - npm or yarn
 
-## 🚀 Installation & Setup
+## 🚀 Installation & Setup (Run followings in CMD or Terminal)
 
 ### 1. Clone the Repository
 
@@ -55,26 +55,18 @@ cd server
 npm install
 ```
 
-#### i. Edit CORS origin URL inside the server.js
+#### i. Environment Configuration
+- Create a .env file using .env.sample in the backend directory:
 
 ```bash
-baseURL: 'http://localhost:5173',  // Replace with your frontend URL
+cp .env.sample .env
 ```
+- **Note :-** You need to update environment variables' data according to your details.
 
-#### ii. Environment Configuration
-- Create a .env file in the backend directory:
-- **Note :-** You need to put the MONGO_URI as the connection string of **MongoDB atlas** server or **MongoDB Compass** desktop App.
-
-```bash
-MONGO_URI=mongodb://localhost:27017/mern-auth
-JWT_SECRET=secret069d47bc574638bf2e384b50de160271
-REFRESH_SECRET=refreshsecretdb6af092366c4a1931f0b1d79bc90906
-```
-
-#### iii. Start Backend Server
+#### ii. Start Backend Server
 
 ```bash
-npm start
+npm run dev
 ```
 
 ### 3. Frontend Setup
@@ -83,14 +75,13 @@ npm start
 cd ../client
 npm install
 ```
-
-#### i. API Configuration
-- Edit the api.js file (client/src/api.js)
-- Change the baseURL to your client URL
+#### i. Environment Configuration
+- Create a .env file using .env.sample in the Client directory:
 
 ```bash
-baseURL: 'http://localhost:5000/api',  // Replace with your backend URL + '/api'
+cp .env.sample .env
 ```
+- **Note :-** You need to update environment variables' data according to your details.
 
 #### ii. Start Frontend Development Server
 

@@ -51,8 +51,8 @@ export const login = async (req, res) => {
       .cookie('refreshToken', refreshToken, {
         path: '/refresh',
         httpOnly: true,
-        secure: true, // when https - true, http - false
-        sameSite: 'none',// strict - use in different domain/subdomain
+        secure: process.env.NODE_ENV === 'production', // when https - true, http - false
+        sameSite: process.env.SAME_SITE_COOKIE,
       })
       .json({ accessToken, role: user.role });
   } catch (err) {
@@ -81,8 +81,8 @@ export const refresh = async (req, res) => {
         .cookie('refreshToken', refreshToken, {
           path: '/refresh',
           httpOnly: true,
-          secure: true, // when https - true, http - false
-          sameSite: 'none',// strict - use in different domain/subdomain
+          secure: process.env.NODE_ENV === 'production', // when https - true, http - false
+          sameSite: process.env.SAME_SITE_COOKIE,
         })
         .json({ accessToken });
     });
@@ -106,10 +106,10 @@ export const logout = async (req, res) => {
     res.clearCookie('refreshToken', {
       path: '/refresh',
       httpOnly: true,
-      secure: true, 
-      sameSite: 'none',
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: process.env.SAME_SITE_COOKIE,
     });
-    
+
     res.json({ message: 'Logged out' });
   } catch (err) {
     res.status(500).json({ message: err.message });
